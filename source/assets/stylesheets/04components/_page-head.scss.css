@@ -28,13 +28,16 @@
   @extend %group;
   @include font($nav-font, 400);
   a {
-    @include font-size(21);
+    @include font-size(18);
     color: $nav-color;
     padding: 0.5em;
     text-decoration: none;
-
+    text-transform: uppercase;
+    &:hover {
+      color: $text-ko;
+      background-color: $green;
+    }
   }
-
 }
 
 
