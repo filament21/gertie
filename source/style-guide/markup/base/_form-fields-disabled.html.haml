@@ -1,0 +1,83 @@
+%form
+  %fieldset
+    %div
+      %label{ for: 'disabled-text' } Disabled text input
+      %input#disabled-text{ type: 'text', value: 'Disabled text input', disabled: 'true' }
+    %div
+      %label{ for: 'disabled-text-1' } Disabled text input w/ placeholder text
+      %input#disabled-text-1{ type: 'text', placeholder: 'Placeholder tip', disabled: 'true' }
+    %div
+      %label{ for: 'disabled-text-2' } Disabled required text input <span class="required">*</span>
+      %input#disabled-text-2{ type: 'text', required: 'true', disabled: 'true' }
+    %div
+      %label{ for: 'disabled-email' } Disabled email input
+      %input#disabled-email{ type: 'email', value: 'you@example.com', disabled: 'true' }
+    %div
+      %label{ for: 'disabled-url' } Disabled url input
+      %input#disabled-url{ type: 'url', value: 'http://website.com', disabled: 'true' }
+    %div
+      %label{ for: 'disabled-search' } Disabled Search input
+      %input#disabled-search{ type: 'search', value: 'Search Our Site', disabled: 'true' }
+    %div
+      %label{ for: 'disabled-tel' } Disabled Telephone Input
+      %input#disabled-tel{ type: 'tel', value: '312-123-4567', disabled: 'true' }
+    %div
+      %label{ for: 'disabled-password' } Disabled Password Input
+      %input#disabled-password{ type: 'password', disabled: 'true' }
+    %div
+      %label{ for: 'disabled-select' } Disabled select field
+      %select.js-chosen#disabled-select{ disabled: 'true' }
+        %option Option 01
+        %option Option 02
+        %option Option 03
+        %option Option 04
+        %option Option 05
+    %div
+      %label{ for: 'disabled-multi-select' } Disabled Multi-Select field
+      %select.js-chosen#disabled-multi-select{ disabled: 'true', multiple: 'true' }
+        %option Option 01
+        %option Option 02
+        %option Option 03
+        %option Option 04
+        %option Option 05
+    %div
+      %label{ for: 'disabled-file' } Disabled file input
+      %input#disabled-file{ type: 'file', disabled: 'true' }
+    %div
+      %label{ for: 'disabled-radio' }
+        %input#disabled-radio{ type: 'radio', name: 'rad', disabled: 'true' }
+        Disabled radio input
+    %div
+      %label{ for: 'disabled-checkbox' }
+        %input#disabled-checkbox{ type: 'checkbox', disabled: 'true' }
+        Disabled checkbox input
+    %div
+      %label{ for: 'disabled-color' } Disabled color input
+      %input#disabled-color{ type: 'color', value: '#000000', disabled: 'true' }
+    %div
+      %label{ for: 'disabled-range' } Disabled range input
+      %input#disabled-range{ type: 'range', disabled: 'true' }
+    %div
+      %label{ for: 'disabled-number' } Disabled number input
+      %input#disabled-number{ type: 'number', value: '5', min: '0', max: '10', disabled: 'true' }
+    %div
+      %label{ for: 'disabled-textarea' } Disabled textarea
+      %textarea#disabled-textarea{ cols: '30', rows: '5', disabled: 'true' } Textarea text      
+    %div
+      %label Date input
+      %input#date{ type: "date", disabled: 'true' }
+    %div
+      %label Month input
+      %input#month{ type: "month", disabled: 'true' }
+    %div
+      %label Week input
+      %input#week{ type: "week", disabled: 'true' }
+    %div
+      %label Time input
+      %input#time{ type: "time", disabled: 'true' }
+    %div
+      %label Datetime input
+      %input#datetime{ type: "datetime", disabled: 'true' }
+    %div
+      %label Datetime-local input
+      %input#datetime-local{ type: "datetime-local", disabled: 'true' }

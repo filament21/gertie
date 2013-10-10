@@ -1,0 +1,75 @@
+%form
+  %fieldset
+    %div
+      %label Text input with datalist
+      %input{ list: 'fav-color', placeholder: 'Type your favorite color', type: 'text', value: '' }
+      %datalist#fav-color
+        %option{ value:  'Red' }
+        %option{ value:  'Orange' }
+        %option{ value:  'Yellow' }
+        %option{ value:  'Green' }
+        %option{ value:  'Blue' }
+        %option{ value:  'Purple' }
+    %div
+      %label Range input with datalist
+      %input#number_input{ list: 'number', max: '100', min: '0', type: 'range', value: '0' }
+      %output{ for: 'number_input' } 0
+      %datalist#number
+        %option 25
+        %option 50
+        %option 75
+      :javascript
+        if (document.querySelector) { 
+          document.querySelector('#number_input').onchange = function(e) { 
+            e.target.nextElementSibling.innerText = e.target.value;
+          }
+        }
+    %div
+      %label Color input with datalist
+      %input{ list: 'color', type: 'color', value: '#000000' }
+      %datalist#color
+        %option #ff0000
+        %option #0000ff
+        %option #00ff00
+        %option #ffff00
+        %option #00ffff
+    %div
+      %label Date input with datalist
+      %input{ list: 'days', type: 'date' }
+      %datalist#days
+        %option{ label: 'Independence Day' } 2013-07-04
+        %option{ label: 'Labor Day' } 2013-09-02
+        %option{ label: 'Columbus Day' } 2013-10-14
+    %div
+      %label Time input with datalist
+      %input{ list: 'times', type: 'time' }
+      %datalist#times
+        %option{ label: 'Midnight' } 00:00
+        %option 06:00
+        %option{ label: 'Noon' } 12:00
+        %option 18:00
+    %div
+      %label Datetime-local input with datalist
+      %input{ list: 'datetime-locals', type: 'datetime-local' }
+      %datalist#datetime-locals
+        %option{ label: 'Santa Visit' } 2012-12-24T23:59
+        %option{ label: 'Chrismas party' } 2012-12-25T18:00
+        %option 2012-12-30T00:00
+        %option{ label: 'Happy New Year' } 2013-01-01T00:00
+    %div
+      %label Month input with datalist
+      %input{ list: 'months', type: 'month' }
+      %datalist#months
+        %option{ label: 'End of last century' } 2000-12
+        %option 2010-01
+        %option 2011-01
+        %option 2012-01
+        %option 2013-01
+    %div
+      %label Week input with datalist
+      %input{ list: 'weeks', type: 'week' }
+      %datalist#weeks
+        %option{ label: 'First week of 2013' } 2013-W01
+        %option{ label: 'Second week of 2013' } 2013-W02
+        %option{ label: '13th week of 2013' } 2013-W13
+        %option{ label: 'The last week of 2013' } 2013-W52

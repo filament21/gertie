@@ -1,0 +1,8 @@
+-# Loads jQuery, jQuery UI elements, plugins, functions and ios orientation fix
+= javascript_include_tag "deploy.foot"
+
+/[if (lt IE 9) & (!IEMobile)]
+  -# Loads selectivizr and respond
+  =javascript_include_tag "deploy.foot-ltie9"
+
+= partial 'shared/analytics/google'

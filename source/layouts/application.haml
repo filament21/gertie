@@ -1,0 +1,19 @@
+!!! 5
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 7 ]><html class="no-js ie ie6 ltie7 ltie8 ltie9 ltie10" lang="en"><![endif]-->
+<!--[if IE 7 ]><html class="no-js ie ie7 ltie8 ltie9 ltie10" lang="en"><![endif]-->
+<!--[if IE 8 ]><html class="no-js ie ie8 ltie9 ltie10" lang="en"><![endif]-->
+<!--[if IE 9 ]><html lang="en" class="no-js ie ie9 ltie10"> <![endif]-->
+<!--[if (gt IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!-->
+%html.no-js.no-ie{lang: "en"}
+  <!--<![endif]-->
+
+  = partial 'shared/head'
+
+  %body{ class: page_classes }
+
+    = partial 'shared/header'
+
+    = yield
+
+    = partial 'shared/footer'

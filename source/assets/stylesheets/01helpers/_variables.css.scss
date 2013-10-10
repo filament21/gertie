@@ -1,0 +1,71 @@
+/* ******************************************************************************
+ *
+ * Font Stacks
+ *
+ ****************************************************************************** */
+
+$sans-serif: 'Helvetica Neue', Helmet, Freesans, sans-serif;
+$serif: Georgia, 'Palatino Linotype', Palatino, 'Times New Roman', Times, serif;
+$monospace: 'courier new', monospace, serif;
+
+/* ******************************************************************************
+ *
+ * Font Usage
+ *
+ ****************************************************************************** */
+
+$body-font: $sans-serif;
+$headline-font: $sans-serif;
+$code-font: $monospace;
+
+$nav-font: $sans-serif;
+
+/* ******************************************************************************
+ *
+ * Colors
+ *
+ * By Color Name
+ *
+ ****************************************************************************** */
+
+$black: #000;
+$x-dk-gray: #333;
+$dk-gray: #666;
+$gray: #999;
+$lt-gray: #aaa;
+$x-lt-gray: #ddd;
+$white: #fff;
+
+$green: #3CA635;
+
+/* ******************************************************************************
+ *
+ * Colors
+ *
+ * By Usage Name, reference the color variables above, use the variables below
+ * in the actual SASS partials throughout the site.
+ *
+ ****************************************************************************** */
+
+$body-text: $black;
+$body-bg: $white;
+$text-ko: $white;
+
+
+$header-bg: $white;
+$nav-bg: $x-lt-gray;
+$nav-color: $gray;
+
+$selection-text: $black;
+$selection-bg: transparentize($lt-gray, 0.5);
+
+$border-color: $black;
+
+/* ******************************************************************************
+ *
+ * Site specific variables
+ *
+ ****************************************************************************** */
+
+$base-size: 10;
+$gutter-width: 3em;

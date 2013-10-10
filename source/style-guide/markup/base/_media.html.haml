@@ -1,0 +1,13 @@
+%h3.sg-h3 Default Image
+= image_tag "http://placekitten.com/240/240", { alt: "Kitties" }
+
+%h3.sg-h3 Linked Image
+%a{ href: "#"}
+  = image_tag "http://placekitten.com/240/240", { alt: "There go the kitties" }
+
+
+%h3.sg-h3 Empty Image
+%img{ alt: "Lost Kitties" }
+
+%h3.sg-h3 Broken Image
+= image_tag "htp://placekitten.com/240/240", { alt: "Lost Kitties" }

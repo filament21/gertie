@@ -1,0 +1,90 @@
+%form
+  %fieldset
+    %div
+      %label{ for: 'text-3' } Text input
+      %input#text-3{ type: 'text', value: 'Text input' }
+    %div
+      %label{ for: 'text-4' } Text input w/ placeholder text
+      %input#text-4{ type: 'text', placeholder: 'Placeholder tip' }
+    %div
+      %label{ for: 'text-5' } Required text input <span class="required">*</span>
+      %input#text-5{ type: 'text', required: 'true' }
+    %div
+      %label{ for: 'email' } Email input
+      %input#email{ type: 'email', value: 'you@example.com' }
+    %div
+      %label{ for: 'url' } Url input
+      %input#url{ type: 'url', value: 'http://website.com' }
+    %div
+      %label{ for: 'search' } Search input
+      %input#search{ type: 'search', value: 'Search Our Site' }
+    %div
+      %label{ for: 'tel' } Telephone Input
+      %input#tel{ type: 'tel', value: '312-123-4567' }
+    %div
+      %label{ for: 'password' } Password Input
+      %input#password{ type: 'password' }
+    %div
+      %label{ for: 'select' } Select field
+      %select.js-chosen#select{ placeholder: 'Select an Option' }
+        %option 
+        %option Option 01
+        %option Option 02
+        %option Option 03
+        %option Option 04
+        %option Option 05
+    %div
+      %label{ for: 'multi-select' } Multi-Select field
+      %select.js-chosen#select{ multiple: 'true' }
+        %option Option 01
+        %option Option 02
+        %option Option 03
+        %option Option 04
+        %option Option 05
+    %div
+      %label{ for: 'file' } File input
+      %input#file{ type: 'file' }
+    %div
+      %label{ for: 'radio' }
+        %input#radio{ type: 'radio', name: 'rad' }
+        Radio input
+    %div
+      %label{ for: 'checkbox' }
+        %input#checkbox{ type: 'checkbox' }
+        Checkbox input
+    %div
+      %label{ for: 'color' } Color input
+      %input#color{ type: 'color', value: '#000000' }
+    %div
+      %label{ for: 'range' } Range input
+      %input#range{ type: 'range' }
+      :javascript
+        if (document.querySelector) {
+          document.querySelector('#range').onchange = function(e) {
+            e.target.nextElementSibling.innerText = e.target.value;
+          }
+        }
+    %div
+      %label{ for: 'number' } Number input
+      %input#number{ type: 'number', value: '5', min: '0', max: '10' }
+    %div
+      %label{ for: 'textarea' } Textarea
+      %textarea#textarea{ cols: '30', rows: '5' } Textarea text
+    %div
+      %label Date input
+      %input#date{ type: "date" }
+    %div
+      %label Month input
+      %input#month{ type: "month" }
+    %div
+      %label Week input
+      %input#week{ type: "week" }
+    %div
+      %label Time input
+      %input#time{ type: "time" }
+    %div
+      %label Datetime input
+      %input#datetime{ type: "datetime" }
+    %div
+      %label Datetime-local input
+      %input#datetime-local{ type: "datetime-local" }

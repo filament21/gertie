@@ -1,0 +1,98 @@
+/* ******************************************************************************
+ *
+ * Compass & Susy Setup
+ *
+ * First, let's include our Compass mixins. Add or remove as needed. See
+ * http://compass-style.org for compass documentation.
+ *
+ * The first include is a file where we can override any of the Compass defaults
+ * we would like to change on a project wide basis.
+ *
+ ****************************************************************************** */
+
+@import "01helpers/compass-variables";
+
+@import "compass/css3";
+@import "compass/typography";
+@import "compass/layout/stretching";
+@import "compass/utilities/color";
+@import "compass/utilities/general/float";
+@import "compass/utilities/general/min";
+@import "compass/reset/utilities";
+
+@import "chosen";
+
+/* ******************************************************************************
+ *
+ * Project Helpers
+ *
+ * Sass helper files (variables, mixins, functions, etc.)
+ *
+ ****************************************************************************** */
+
+@import "01helpers/functions";
+@import "01helpers/variables";
+@import "01helpers/mixins";
+@import "01helpers/reset-addons";
+
+/* ******************************************************************************
+ *
+ * Project Base
+ *
+ * Base layout and typography files
+ *
+ ****************************************************************************** */
+
+@import "02base/general";
+@import "02base/type";
+
+/* ******************************************************************************
+ *
+ * Project templates
+ *
+ * Templates are building blocks, like happy little style legos. We don't use
+ * these template classes in code. Instead, they are repeatable patterns that
+ * can be put together using @extends to create components. Template classes
+ * should be named as such:
+ *
+ * %template-name                       | Standard template
+ * %template-name--modifier-name        | Standard template, modified (ex: %button--large)
+ *
+ ****************************************************************************** */
+
+
+/* ******************************************************************************
+ *
+ * Project components
+ *
+ * Components are stand-alone visual elements. They are the things that make up
+ * a page once the page is laid out. Forms and buttons modals and search widgets,
+ * etc. They should always be namespaced with the component name and these classes
+ * get applied to the HTML. They should be named as such:
+ *
+ * .component-name                       | Standard component
+ * .component-name--modifier-name        | Standard component, modified (ex: .button--large)
+ * .component-name__sub-object           | This actually lives within the standard component (.button__icon for an icon that lives inside a button)
+ * .component-name__sub-object--modifier | Let's put it all together now (.button__icon--large for an icon that lives inside a large button)
+ *
+ ****************************************************************************** */
+
+@import "04components/page-head";
+@import "04components/side-nav";
+
+
+/* ******************************************************************************
+ *
+ * Project layout
+ *
+ * With the components ready to go we can now layout the page. Layout classes
+ * also follow a standard naming principle to help easily identify them in the
+ * HTML:
+ *
+ * .l-layout-method - General layout and positioning classes
+ * .grid-layout-method - Grid layout and positioning classes
+ *
+ ****************************************************************************** */
+
+@import "05layout/grid";
+@import "05layout/structure";

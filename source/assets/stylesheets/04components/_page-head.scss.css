@@ -1,0 +1,40 @@
+.site-header {
+  background: $header-bg;
+/*   @include box-sizing(content-box); */
+/*   height: image-height('logo/txi-logo.png') + 20px; */
+  padding-top: $gutter-width/4;
+/*   padding-bottom: $gutter-width; */
+}
+
+.logo {
+  padding: 10px 20px 20px 10px;
+  float: left;
+  a {
+    display: block;
+    background-image: url(image-path('logo/txi-logo.png'));
+    background-position: 10px 0px;
+    background-repeat: no-repeat;
+    padding-top: image-height('logo/txi-logo.png') + 10px;
+    width: image-width('logo/txi-logo.png') + 10px;
+    height: 0;
+    overflow: hidden;
+  }
+}
+
+
+.main-nav {
+/*   background-color: $nav-bg; */
+/*   float: right; */
+  @extend %group;
+  @include font($nav-font, 400);
+  a {
+    @include font-size(21);
+    color: $nav-color;
+    padding: 0.5em;
+    text-decoration: none;
+
+  }
+
+}
+
+

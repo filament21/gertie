@@ -1,0 +1,56 @@
+- site_name = 'Site Name Goes Here'
+- site_url = 'http://website.com/'
+
+%head
+
+  %meta{:charset => 'utf-8'}
+  -# Use Page Title from Current Page if it's in the YAML Frontmatter
+  %title= current_page.data.title || site_name
+
+  -# Use Page Description from Current Page if it's in the YAML Frontmatter
+  %meta{ name: 'description', content: current_page.data.description || 'Fill in the description' }
+  %meta{ name: 'author', content: "#{site_name} Author" }
+  %meta{ name: 'copyright', content: "Copyright 2013, #{site_name}" }
+  %meta{ name: 'DC.title', content: current_page.data.title || site_name }
+  %meta{ name: 'DC.description', content: current_page.data.description || 'Fill in the description' }
+  %meta{ name: 'DC.creator', content: "#{site_name} Author" }
+
+  -# These are Facebook Sharing Meta Tags
+  %meta{ property: 'og:title', content: site_name }
+  %meta{ property: 'og:description', content: current_page.data.description || 'Fill in the description' }
+  %meta{ property: 'og:image', content: '/assets/fav/facebook.png' }
+  %meta{ property: 'og:url', content: site_url + request.path }
+
+  -# These are Various Browser and Mobile Meta Tags
+  %meta{:'http-equiv' => 'X-UA-Compatible', :content => 'IE=edge,chrome=1'}
+  %meta{:'http-equiv' => 'imagetoolbar', :content => 'false'}
+  %meta{:'http-equiv' => 'cleartype', :content => 'on'}
+  %meta{:name => 'HandheldFriendly', :content => 'True'}
+  %meta{:name => 'MobileOptimized', :content => '320'}
+  %meta{:name => 'viewport', :content => 'width=device-width, initial-scale=1.0'}
+
+  %link{ rel: 'canonical', href: site_url + request.path }
+
+  = stylesheet_link_tag "style", media: 'all'
+  /[if lt IE 9]
+    = stylesheet_link_tag "ie8", media: 'screen'
+
+  :javascript
+    var b = document.documentElement;
+      b.setAttribute('data-useragent',  navigator.userAgent);
+      b.setAttribute('data-platform', navigator.platform );
+
+  -# Only includes Modernizr. Everything else is down at the bottom.
+  = javascript_include_tag "deploy.head"
+  /[if lt IE 9]
+    = javascript_include_tag "deploy.head-ltie9"
+
+  -# Favicons - update these when there's a final logo
+  %link{:rel => 'apple-touch-icon-precomposed', :sizes => '144x144', :href => '/assets/fav/apple-touch-icon-144.png'}
+  %link{:rel => 'apple-touch-icon-precomposed', :sizes => '114x114', :href => '/assets/fav/apple-touch-icon-114.png'}
+  %link{:rel => 'apple-touch-icon-precomposed', :sizes => '72x72', :href => '/assets/fav/apple-touch-icon-72.png'}
+  %link{:rel => 'apple-touch-icon-precomposed', :href => '/assets/fav/apple-touch-icon-precomposed.png'}
+  %link{:rel => 'shortcut icon', :href => '/assets/fav/favicon.ico'}
+  %meta{:name => 'msapplication-TileImage', :content => '/assets/fav/ms-pinned.png'}
+  %meta{:name => 'msapplication-TileColor', :content => '#ffffff'}
+  %meta{:name => 'application-name', :content => site_name}

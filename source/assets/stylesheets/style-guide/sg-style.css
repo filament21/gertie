@@ -1,0 +1,383 @@
+/* -------------------------------------------------------------------------
+
+ Style Guide Boilerplate v2.0.1
+ Repo: https://github.com/bjankord/Style-Guide-Boilerplate
+ Author: Brett Jankord
+ License: MIT
+
+---------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------
+ Layout
+---------------------------------------------------------------------------- */
+
+* {
+  -webkit-font-smoothing: antialiased; 
+  -moz-font-smoothing: antialiased; 
+  -ms-font-smoothing: antialiased; 
+  -o-font-smoothing: antialiased; 
+  font-smoothing: antialiased; 
+}
+
+body {margin: 0;}
+
+.sg-header {
+  background: #3ca635;
+  color: #fff;
+  zoom: 1; /* IE6 Fix */
+  font-size: 1.6em;
+}
+
+@media screen and (max-width: 650px) {
+  .sg-header {
+    text-align: center;
+  }
+}
+
+
+.sg-info, .sg-base-styles {
+  padding-bottom: 24px; /* For older browsers */
+  padding-bottom: 2.4rem;
+}
+
+
+/* -------------------------------------------------------------------------
+ Utility Classes
+---------------------------------------------------------------------------- */
+.sg-container {
+  overflow: hidden;
+  padding: 16px 24px; /* For older browsers */
+  padding: 1.6rem 2.4rem;
+}
+
+.sg-animated {
+  -webkit-transition: all 0.2s ease-out;  
+     -moz-transition: all 0.2s ease-out;
+      -ms-transition: all 0.2s ease-out;
+       -o-transition: all 0.2s ease-out;
+          transition: all 0.2s ease-out;
+}
+
+.sg-img-inline {
+  vertical-align: baseline;
+  position: relative;
+  bottom: -3px;
+}
+
+
+/* -------------------------------------------------------------------------
+ Modules
+---------------------------------------------------------------------------- */
+
+/* Bradning
+---------------------------------------------------------------------------- */
+.sg-logo {
+  float: left;
+  font-size: 1.5em;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+  .sg-logo span {
+    font-weight: bold;
+  }
+
+@media screen and (max-width: 650px) {
+  .sg-logo {
+    float: none;
+    padding-bottom: .5em;
+    text-align: center;
+  }
+}
+
+/* Navigation
+---------------------------------------------------------------------------- */
+.sg-nav{
+  float: right;
+}
+
+.js .sg-submit-btn {
+  display: none;
+}
+
+.operamini .sg-nav {
+  display: none;
+}
+
+@media screen and (max-width: 650px) {
+  .sg-nav{
+    display: inline;
+    float: none;
+  }
+}
+
+/* Headings
+---------------------------------------------------------------------------- */
+.sg-h1,
+.sg-h2,
+.sg-h3 {
+  font-family: sans-serif;
+  font-weight: normal;
+  margin-bottom: 1em;
+  margin-top: 0;
+}
+
+.sg-h1 {    
+  border-top: 20px solid #e3f3e4;
+  font-size: 3.2em;
+  margin: 0 -24px;
+  padding: 1em 24px 0;
+  font-weight: bold;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.sg-h2 {
+  border-bottom: 2px solid #ddd;
+  font-size: 2.4em;
+  margin-bottom: .5em;
+  text-transform: capitalize; 
+}
+
+.sg-h3 {
+  margin-top: 2em;
+  font-size: 1.8em;
+}
+
+.sg-h3:first-of-type {
+  margin-top: 0;
+}
+
+
+
+/* Buttons
+---------------------------------------------------------------------------- */
+.sg-btn {
+  background: #cbcbcb;
+  color: #222;
+  float: left;
+  padding: .5em .9em;
+  text-decoration: none;
+}
+
+.js .sg-btn--source {
+  display: block;
+}
+
+.sg-btn--source, 
+.operamini .sg-btn--source,
+.legacy .sg-btn--source {
+  display: none;
+}
+
+.sg-btn--top {
+  float: right;
+}
+
+.sg-btn--select {
+  border-radius: 0 0.3em;
+  position: absolute;
+  right: 1px;
+  top: 0;
+  font-size: 1.6em;
+}
+
+
+/* Sections
+---------------------------------------------------------------------------- */
+.sg-section {
+  margin-bottom: 32px; /* For older browsers */ 
+  margin-bottom: 3rem;
+  overflow: hidden;
+}
+
+  .sg-anchor {
+    display: block;
+    padding-top: 1em;
+  }
+
+
+/* Colors
+---------------------------------------------------------------------------- */
+.sg-color {
+  background: #fff;
+  border: 1px solid #bbb;
+  display: inline-block;
+  height: 100px;
+  margin: 0 .5em .5em 0;
+  padding: 5px;
+  position: relative;
+  width: 100px;
+}
+
+.sg-color-swatch {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.sg-color-swatch span {
+  background: #000;
+  background: rgba(0,0,0,.7);
+  bottom: 5px;
+  left: 5px;
+  right: 5px;
+  color: #fff;
+  font-size: 1em;
+  margin: 0;
+  opacity: 0;
+  padding: 5px 0;
+  position: absolute;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.sg-color-swatch:hover span {
+  opacity: 1;
+}
+
+
+/* Fonts
+---------------------------------------------------------------------------- */
+.sg-font {
+  font-size: 2em;
+  padding: 0 0 .2em 0;
+}
+
+
+/* Markup
+---------------------------------------------------------------------------- */
+.sg-markup {}
+
+.sg-markup-controls {
+  overflow: hidden;
+  padding-top: 1.5em;
+  font-size: 1.6em;
+}
+
+.sg-source {
+  position: relative;
+  margin: 1em 0;
+}
+
+.sg-source pre {
+  background: #333;
+  border-radius: .5em;
+  border: 1px solid #ddd;
+  color: #fff;
+  overflow-x: scroll;
+  padding: .5em .3em;
+}
+
+.sg-source pre code {
+  background: transparent;
+}
+
+.js .sg-source {
+  max-height: 0;
+  overflow: hidden;
+}
+
+.js .sg-source.is-active,
+.operamini .sg-source,
+.legacy .sg-source {
+  max-height: 2400px; 
+}
+
+
+/* -------------------------------------------------------------------------
+ Prettyprint
+---------------------------------------------------------------------------- */
+.pln {color: #fff} /* plain text */
+
+@media screen {
+  .str,
+  .string {color: #E6DB74;} /* string content */
+  
+  .kwd,
+  .keyword {color: #66D9EF;} /* a keyword */
+  
+  .com,
+  .comment {color: #75715E;} /* a comment */
+  
+  .typ {color: #A6E22E;} /* a type name */
+  
+  .lit,
+  .number {color: #AE81FF;} /* a literal value */
+  
+  /* punctuation, lisp open bracket, lisp close bracket */
+  /* .pun, .opn, .clo { color: #660 } */
+  
+  .tag {color: #F92672;} /* a markup tag name */
+  
+  .atn {color: #A6E22E;} /* a markup attribute name */
+  
+  .atv {color: #E6DB74;} /* a markup attribute value */
+  
+  /*.dec, .var { color: #606 }*/ /* a declaration; a variable name */
+  
+  .fun {color: #FF0000;} /* a function name */
+}
+
+/* Use higher contrast and text-weight for printable form. */
+@media print, projection {
+  .str {color: #060}
+
+  .kwd {color: #006; font-weight: bold }
+  
+  .com {color: #600; font-style: italic }
+  
+  .typ {color: #404; font-weight: bold }
+  
+  .lit {color: #044}
+  
+  .pun, 
+  .opn, 
+  
+  .clo {color: #440}
+  
+  .tag {color: #006; font-weight: bold }
+  
+  .atn {color: #404}
+  
+  .atv {color: #060}
+}
+
+/* Specify class=linenums on a pre to get line numbering */
+ol.linenums {
+  border-left:1px solid #444;
+  margin: 0 0 0 4.3em; /* IE indents via margin-left */
+  padding: 0;
+}
+
+ol.linenums li {
+  color: #bebec5;
+  line-height: 1.5;
+  padding-left: .8em;
+}
+
+
+/* -------------------------------------------------------------------------
+ Legacy IE
+---------------------------------------------------------------------------- */
+/**
+ * IE 7 Fixes
+ */
+.sg-color {
+  *display: inline;
+  zoom: 1;
+}
+/* End IE 7 Fixes */
+
+
+/**
+ * IE 6 Fixes
+ */
+pre{
+  _white-space: pre;
+  _white-space: pre-wrap;
+  _word-wrap: break-word;
+}
+/* End IE 6 Fixes */

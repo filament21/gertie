@@ -1,0 +1,20 @@
+%form
+  %fieldset
+    %legend Fieldset with legend
+    %div
+      %label{ for: 'text-1' } Text input
+      %input#text-1{ type: 'text', value: 'Text input' }
+    %input{ type: 'submit', value: 'Submit' }
+
+  %fieldset
+    %div
+      %label{ for: 'text-2' } Text input
+      %input#text-2{ type: 'text', value: 'Text input' }
+    %input{ type: 'submit', value: 'Submit' }
+
+  %fieldset
+    %legend Fieldset with a very, very, very, very, very, long legend that can test the display of word wrapping to see how it looks.
+    %div
+      %label{ for: 'text-3' } Text input
+      %input#text-3{ type: 'text', value: 'Text input' }
+    %input{ type: 'submit', value: 'Submit' }

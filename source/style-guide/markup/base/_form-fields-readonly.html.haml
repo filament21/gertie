@@ -1,0 +1,23 @@
+%form
+  %fieldset
+    %div
+      %label{ for: 'readonly-text' } Readonly text input
+      %input#readonly-text{ type: 'text', value: 'Readonly text input', readonly: 'true' }
+    %div
+      %label{ for: 'readonly-email' } Readonly email input
+      %input#readonly-email{ type: 'email', value: 'you@example.com', readonly: 'true' }
+    %div
+      %label{ for: 'readonly-url' } Readonly url input
+      %input#readonly-url{ type: 'url', value: 'http://website.com', readonly: 'true' }
+    %div
+      %label{ for: 'readonly-color' } Readonly color input
+      %input#readonly-color{ type: 'color', value: '#000000', readonly: 'true' }
+    %div
+      %label{ for: 'readonly-range' } Readonly range input
+      %input#readonly-range{ type: 'range', readonly: 'true' }
+    %div
+      %label{ for: 'readonly-number' } Readonly number input
+      %input#readonly-number{ type: 'number', value: '5', min: '0', max: '10', readonly: 'true' }
+    %div
+      %label{ for: 'readonly-textarea' } Readonly textarea
+      %textarea#readonly-textarea{ cols: '30', rows: '5', readonly: 'true' } Textarea text

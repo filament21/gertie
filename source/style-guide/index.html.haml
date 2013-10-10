@@ -1,0 +1,127 @@
+---
+colors:
+  - "fff"
+  - "ccc"
+  - "999"
+  - "666"
+  - "333"
+  - "000000"
+fonts:
+  - "'Helvetica Neue', Helmet, Freesans, sans-serif;"
+  - "Georgia, 'Palatino Linotype', Palatino, 'Times New Roman', Times, serif;"
+  - "'courier new', monospace, serif;"
+site_name: Site Name Here  
+---
+
+!!! 5
+%html{ lang: 'en' }
+  %head
+    %meta{ charset: "utf-8" }
+    %title Site Style Guide
+  
+    %meta{ name: "viewport", content: "width=device-width" }
+    
+    -# Style Guide Boilerplate Styles
+    = stylesheet_link_tag "style-guide/sg-style"
+    
+    -# Replace below stylesheet with your own stylesheet
+    = stylesheet_link_tag "style"
+    
+    -# Only includes Modernizr. Everything else is down at the bottom.
+    = javascript_include_tag "deploy.head"
+    /[if lt IE 9]
+      = javascript_include_tag "deploy.head-ltie9"
+  
+  %body
+  
+    #top.sg-header.sg-container
+      %h1.sg-logo STYLE GUIDE <span>#{current_page.data.site_name}</span>
+      %form.sg-nav#js-sg-nav{ action: "", method: "post" }
+        %select#js-sg-section-switcher.sg-section-switcher{ name: "sg_section_switcher" }
+          %option{ value: ""} Jump To Section:
+          %optgroup{ label: "Intro" }
+            %option{ value: "#sg-about" } About
+            %option{ value: "#sg-colors" } Colors
+            %option{ value: "#sg-fontStacks" } Font-Stacks
+          %optgroup{ label: "Base Styles" }
+            - sg_basenames_with_titlenames('base').each do |(basename, titlename)|
+              %option{ value: "#sg-#{basename}" }= titlename
+            
+          %optgroup{ label: "Component Styles" }
+            - sg_basenames_with_titlenames('components').each do |(basename, titlename)|
+              %option{ value: "#sg-#{basename}" }= titlename
+            
+        %button.sg-submit-btn{ type: "submit" } Go
+  
+    .sg-body.sg-container
+      .sg-info
+        .sg-about.sg-section
+          %h2.sg-h2
+            %a#sg-about.sg-anchor About
+          %p Comments and documentation about your style guide. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus nobis enim labore facilis consequuntur! Veritatis neque est suscipit tenetur temporibus enim consequatur deserunt perferendis. Neque nemo iusto minima deserunt amet.
+          %p
+            Created by 
+            = link_to 'http://tablexi.com', target: '_blank' do
+              = image_tag '/assets/images/style-guide/txi-logo.png', width: '70', height: '20', alt: 'TableXI', class: 'sg-img-inline'
+        
+        .sg-colors.sg-section
+          %h2.sg-h2
+            %a#sg-colors.sg-anchor Colors
+          - current_page.data.colors.each do |color|
+            %div{ class: "sg-color sg-color--#{color}" }
+              %span.sg-color-swatch{ style: "background-color: ##{color}" }
+                %span.sg-animated ##{color}
+          .sg-markup-controls
+            %a.sg-btn--top{ href: "#top" } Back to Top
+        
+        .sg-font-stacks.sg-section
+          %h2.sg-h2
+            %a#sg-fontStacks.sg-anchor Font Stacks
+          - current_page.data.fonts.each do |stack|
+            %p.sg-font{ style: "font-family: #{stack}" } #{stack}
+          .sg-markup-controls
+            %a.sg-btn--top{ href: "#top" } Back to Top
+    
+      .sg-base-styles
+        %h1.sg-h1 Base Styles
+        %p Default styling assigned to HTML elements.
+        - sg_fns_bns_tns_and_content('base').each do |(_, basename, titlename, content)|
+          %div{ class: "sg-#{basename} sg-section" }
+            %h2.sg-h2
+              %a.sg-anchor{ id: "sg-#{basename}" } #{titlename}
+            = partial "markup/base/#{basename}"
+            .sg-markup-controls
+              %a.sg-btn--top{ href: "#top" } Back to Top
+              %a.sg-btn.sg-btn--source{ href: "#" } View Source
+            .sg-source.sg-animated
+              %a.sg-btn.sg-btn--select{ href: '#' } Get the code
+              %pre.prettyprint.linenums
+                %code= content
+    
+      .sg-pattern-styles
+        %h1.sg-h1 Component Styles
+        %p Design and mark-up patterns of the unique elements that will make up your site.
+        - sg_fns_bns_tns_and_content('components').each do |(_, basename, titlename, content)|
+          %div{ class: "sg-#{basename} sg-section" }
+            %h2.sg-h2
+              %a.sg-anchor{ id: "sg-#{basename}" } #{titlename}
+            = partial "markup/base/#{basename}"
+            .sg-markup-controls
+              %a.sg-btn--top{ href: "#top" } Back to Top
+              %a.sg-btn.sg-btn--source{ href: "#" } View Source
+            .sg-source.sg-animated
+              %a.sg-btn.sg-btn--select{ href: '#' } Get the code
+              %pre.prettyprint.linenums
+                %code= content
+  
+    = javascript_include_tag "style-guide/sg-plugins.js"
+    = javascript_include_tag "style-guide/sg-scripts.js"
+    
+    -# Loads jQuery, jQuery UI elements, plugins, functions and ios orientation fix
+    = javascript_include_tag "deploy.foot"
+    
+    /[if (lt IE 9) & (!IEMobile)]
+      -# Loads selectivizr and respond
+      =javascript_include_tag "deploy.foot-ltie9"
+    
+    = partial 'shared/analytics/google'

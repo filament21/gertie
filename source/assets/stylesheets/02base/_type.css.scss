@@ -1,0 +1,128 @@
+/* ******************************************************************************
+ *
+ * Default type styles
+ *
+ ****************************************************************************** */
+
+h1, h2, h3, h4, h5, h6 {
+  @include font($headline-font, 700);
+}
+
+h1, h2, h3 {
+}
+
+h1 {
+  @include font-size(32);
+}
+
+h2 {
+  @include font-size(28);
+}
+
+h3 {
+  @include font-size(24);
+}
+
+h4 {
+  @include font-size(21);
+}
+
+h4, h5 {
+}
+
+h4, h5, h6 {
+}
+
+h5 {
+  @include font-size(18);
+}
+
+h5, h6 {
+}
+
+h6 {
+  @include font-size(14);
+}
+
+p {
+  @include font-size(13);
+  margin-bottom: 0.5em;
+}
+
+ol {
+  list-style-type: decimal;
+  li {
+  }
+}
+
+ul {
+  list-style-type: disc;
+  li {
+  }
+  ul {
+    list-style-type: circle;
+    ul {
+      list-style-type: disc;
+    }
+  }
+}
+
+ul, ol {
+  margin: 1em 0 1em 2em;
+  li {
+    @include font-size(13);
+    margin-bottom: 0.3em;
+  }
+}
+
+blockquote {
+  p {
+    font-size: 1em;
+    margin: 0;
+  }
+}
+
+small {
+}
+
+mark {
+}
+
+b, strong {
+}
+
+i, em {
+}
+
+ins, u {
+}
+
+del, s {
+}
+
+abbr {
+}
+
+sup, sub {
+}
+
+sup {
+}
+
+sub {
+}
+
+time {
+}
+
+address {
+}
+
+code, pre {
+}
+
+code {
+}
+
+pre {
+}
