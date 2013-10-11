@@ -13,7 +13,9 @@
   %body{ class: page_classes }
 
     = partial 'shared/header'
+    = partial 'shared/sidenav'
 
-    = yield
+    .grid-5-6.grid-omega
+      = yield
 
     = partial 'shared/footer'

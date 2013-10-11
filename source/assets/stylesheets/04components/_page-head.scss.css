@@ -1,5 +1,6 @@
 .site-header {
   background: $header-bg;
+  border-bottom: 1px solid $green;
 /*   @include box-sizing(content-box); */
 /*   height: image-height('logo/txi-logo.png') + 20px; */
   padding-top: $gutter-width/4;
@@ -7,7 +8,7 @@
 }
 
 .logo {
-  padding: 10px 20px 20px 10px;
+  padding: 10px 20px 0px 10px;
   float: left;
   a {
     display: block;
